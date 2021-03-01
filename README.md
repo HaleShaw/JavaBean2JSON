@@ -1,32 +1,22 @@
-# pojo2json
+# JavaBean2JSON
 
-A simple plugin for converting POJO to JSON in IntelliJ IDEA
+Convert Java bean to JSON in IntelliJ IDEA
 
-Ideas and partial realization from https://github.com/linsage/java2json
-Thanks to the developer @linsage
+## Features
+
+* Support BigDecimal and other Numeric objects
+* Support Java8 time type
+* Support Enum
 
 ## Screenshot
 
-![Image text](https://raw.githubusercontent.com/organics2016/pojo2json/master/screenshot/pojo2json.gif)
+![JavaBean2JSON](https://raw.githubusercontent.com/HaleShaw/JavaBean2JSON/master/JavaBean2JSON.gif)
 
-## Update
+## Fork From
 
-* 1.0.0 - First revision.
-* 1.0.1 - fix dependence bug.
-* 1.0.2 - Fix Parsing enum times wrong and support Java8 time type.
-* 1.0.3 - Think of enum as a string. 
-        - Special time type processing optimization.
-* 1.0.4 - Support enum constant.
-* 1.0.5 - fix idea 192.* compatibility problems.
-* 1.0.6 - fix loop nesting caused stack overflow.
-* 1.0.7 - All floating-point types retain two decimal places.
+[pojo2json](https://github.com/organics2016/pojo2json)
 
+## Contributors
 
-## Plugin
-
-https://plugins.jetbrains.com/plugin/12066-pojo-to-json
-
-
-## Future
-
-* Support Javadoc
+[![organics2016](https://avatars.githubusercontent.com/u/16286533?s=28)organics2016](https://github.com/organics2016)
+[![linsage](https://avatars.githubusercontent.com/u/12984934?s=28)linsage](https://github.com/linsage)
