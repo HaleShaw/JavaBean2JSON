@@ -1,10 +1,10 @@
-package ink.organics.pojo2json.fake;
+package com.jianwudao.javabean2json.fake;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
 
-public class FakeDecimal implements JsonFakeValuesService {
+public class FakeDecimal implements FakeService {
 
 
     private final Random random = new Random();

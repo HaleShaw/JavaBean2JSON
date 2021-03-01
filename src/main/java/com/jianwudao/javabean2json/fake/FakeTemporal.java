@@ -1,10 +1,15 @@
-package ink.organics.pojo2json.fake;
+package com.jianwudao.javabean2json.fake;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
-public class FakeTemporal implements JsonFakeValuesService {
+public class FakeTemporal implements FakeService {
+
+    public final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    public final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    public final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     @Override
     public Object random() {

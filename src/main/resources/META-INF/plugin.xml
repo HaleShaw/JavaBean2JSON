@@ -1,48 +1,66 @@
 <idea-plugin>
-    <id>ink.organics.pojo2json</id>
-    <name>POJO to Json</name>
-    <vendor email="374564811@qq.com" url="https://github.com/organics2016">organics2016</vendor>
-    <depends>com.intellij.modules.platform</depends>
-    <depends>com.intellij.modules.lang</depends>
-    <depends>com.intellij.modules.java</depends>
+    <id>com.jianwudao.JavaBean2JSON</id>
+    <name>Java Bean to JSON</name>
+    <vendor email="HaleShaw@163.com" url="https://www.jianwudao.com">HaleShaw</vendor>
 
     <description><![CDATA[
-       <p>A simple plugin for converting Java bean to JSON</p>
-       <p>git: https://github.com/organics2016/pojo2json</p>
-       <p>Support BigDecimal and other Numeric objects.</p>
-       <p>Support Java8 time type.</p>
-       <p>Support Enum.</p>
+       <h3>Convert Java bean to JSON in IntelliJ IDEA</h3>
+       <ul>
+         <li>Support BigDecimal and other Numeric objects</li>
+         <li>Support Java8 time type</li>
+         <li>Support Enum</li>
+       </ul>
+
+       <p>GitHub: <a href="https://github.com/HaleShaw/JavaBean2JSON">https://github.com/HaleShaw/JavaBean2JSON</a></p>
+
+       <h3>Fork From</h3>
+       <a href="https://github.com/organics2016/pojo2json">https://github.com/organics2016/pojo2json</a>
+
+       <h3>Contributors</h3>
+       <ul>
+         <li><a href="https://github.com/organics2016">organics2016</a></li>
+         <li><a href="https://github.com/linsage">linsage</a></li>
+       </ul>
     ]]></description>
 
-
     <change-notes><![CDATA[
-         <p>1.0.10 version</p>
-         <li>Add a new option to the menu</li>
-         <li>The resulting JSON will have some random values</li>
+        <ul>
+        1.0.0
+        <li>Refactor code</li>
+        <li>Add icon</li>
+        <li>Add a new option to the menu</li>
+        <li>Generating some random values for the result</li>
+        </ul>
     ]]>
     </change-notes>
 
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.lang</depends>
+
     <extensions defaultExtensionNs="com.intellij">
-        <notificationGroup id="pojo2json.NotificationGroup" displayType="BALLOON" key="pojo2json.NotificationGroup"/>
+        <notificationGroup id="javabean2json.NotificationGroup" displayType="BALLOON"
+                           key="javabean2json.NotificationGroup"/>
     </extensions>
 
     <actions>
-        <action class="ink.organics.pojo2json.POJO2JsonDefaultAction"
-                id="ink.organics.pojo2json.POJO2JsonDefaultAction"
-                text="POJO To Json"
-                description="Convert POJO to JSON and copy to the shear plate">
-
+        <action id="JavaBean2JSONDefaultAction"
+                class="com.jianwudao.javabean2json.JavaBean2JSONDefaultAction"
+                text="To JSON"
+                description="Convert Java Bean to JSON and copy to the clipboard"
+                icon="/icons/default.svg">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
-
-        <action class="ink.organics.pojo2json.POJO2JsonRandomAction"
-                id="ink.organics.pojo2json.POJO2JsonRandomAction"
-                text="POJO To Json Random Values"
-                description="Convert POJO to JSON and copy to the shear plate and randomly generate some test data">
-
-            <add-to-group group-id="EditorPopupMenu" relative-to-action="ink.organics.pojo2json.POJO2JsonDefaultAction" anchor="after"/>
-
+        <action id="JavaBean2JSONRandomAction"
+                class="com.jianwudao.javabean2json.JavaBean2JSONRandomAction"
+                text="To JSON With Random Values"
+                description="Convert Java Bean to JSON with some random values and copy to the clipboard"
+                icon="/icons/random.svg">
+            <add-to-group group-id="EditorPopupMenu" relative-to-action="JavaBean2JSONDefaultAction"
+                          anchor="after"/>
+            <add-to-group group-id="GenerateGroup" relative-to-action="JavaBean2JSONDefaultAction"
+                          anchor="after"/>
         </action>
     </actions>
 </idea-plugin>

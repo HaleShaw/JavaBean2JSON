@@ -1,6 +1,6 @@
-package ink.organics.pojo2json.fake;
+package com.jianwudao.javabean2json.fake;
 
-public class FakeChar implements JsonFakeValuesService {
+public class FakeChar implements FakeService {
 
     @Override
     public Object random() {

@@ -1,18 +1,18 @@
-package ink.organics.pojo2json.fake;
+package com.jianwudao.javabean2json.fake;
 
 import java.util.Random;
 
-public class FakeBoolean implements JsonFakeValuesService {
+public class FakeInteger implements FakeService {
 
     private final Random random = new Random();
 
     @Override
     public Object random() {
-        return random.nextBoolean();
+        return random.nextInt(100);
     }
 
     @Override
     public Object def() {
-        return false;
+        return 0;
     }
 }
